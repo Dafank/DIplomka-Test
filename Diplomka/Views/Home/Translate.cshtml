@@ -1,0 +1,24 @@
+﻿@model string
+@{
+    ViewBag.Title = "Translate";
+    Layout = "~/Views/Shared/_Cover.cshtml";
+}
+
+@using (Html.BeginForm("Translate", "Home", FormMethod.Post, new { @class = "form" }))
+{
+    @Html.Label("Enter your word:")
+    <br />
+    @Html.TextBox("Word", null, new { @class = "form-translate", placeholder = "Enter your word here", @required = "true" })
+    <br />
+    <input class="btn-translate" type="submit" value="Translate" />
+}
+
+    <center>
+        @if (@Model != null)
+        {
+        <div class="end-translate">
+            @Model
+        </div>
+        }
+    </center>
+
