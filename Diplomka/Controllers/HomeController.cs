@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Diplomka.Models;
+using Diplomka.HtmlGenerator;
 
 namespace Diplomka.Controllers
 {
@@ -22,9 +23,9 @@ namespace Diplomka.Controllers
         [HttpPost]
         public ActionResult Translate(string Word)
         {
-            string s = Translaters.SetData(Word);
-            Object s1 = s;
-            return View(s1);
+            List<string> ua_words = Translaters.SetData(Word);
+            ViewBag.word = Word;
+            return View(ua_words);
         }
 
         public ActionResult Grammar()

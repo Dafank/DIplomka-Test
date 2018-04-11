@@ -95,18 +95,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Grammar.css" />
-    <Content Include="Content\Page\Cover.css" />
-    <Content Include="Content\User\CSS\Login\Login.css" />
-    <Content Include="Content\User\CSS\Registration\Registration.css" />
-    <Content Include="Content\User\CSS\Validation.css" />
-    <Content Include="Content\Image\image.jpg" />
+    <Content Include="Content\CSS\Pages\Grammar\Grammar.css" />
+    <Content Include="Content\CSS\Pages\All Pages\Cover.css" />
+    <Content Include="Content\CSS\Pages\Translate\Translate.css" />
+    <Content Include="Content\CSS\User\Login\Login.css" />
+    <Content Include="Content\CSS\User\Registration\Registration.css" />
+    <Content Include="Content\CSS\User\Validation.css" />
+    <Content Include="Content\Image\Pages\UA.png" />
+    <Content Include="Content\Image\Pages\UK.png" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\Code Generator.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataModel\Translater.cs" />
@@ -115,7 +116,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Translaters.cs" />
+    <Compile Include="HtmlGenerator\Translated.cs" />
+    <Compile Include="Models\Translate\Translate.cs" />
     <Compile Include="Models\User\Login\LoginData.cs" />
     <Compile Include="Models\User\Registration\RegistrationData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,8 +140,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Image\User\Login\" />
+    <Folder Include="Content\Image\User\Registration\" />
     <Folder Include="Content\JS\" />
-    <Folder Include="Content\User\Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

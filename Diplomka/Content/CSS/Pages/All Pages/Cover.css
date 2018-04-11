@@ -1,0 +1,130 @@
+﻿* {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    outline: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    position:absolute;
+    min-width:100%;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+    bottom:20px;
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-image: -webkit-linear-gradient(60deg, rgb(136, 211, 206) 0%, rgb(110, 69, 226) 100%);
+    background-image: -o-linear-gradient(60deg, rgb(136, 211, 206) 0%, rgb(110, 69, 226) 100%);
+    background-image: linear-gradient(150deg, rgb(136, 211, 206) 0%, rgb(110, 69, 226) 100%);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    font-family: Lobster, cursive;
+    padding: 35px 40px;
+}
+
+.menu {
+    flex-flow: row wrap;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    font-size: 25px;
+}
+
+.menu li {
+        display: flex;
+        color: white;
+        justify-content: space-around;
+        list-style: none;
+        margin-right: 40px;
+        padding:5px;
+}
+
+.menu a {
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
+}
+
+.menu li:hover {
+        text-shadow: 0 0 3px black;
+}
+
+.user-menu li :hover {
+    text-shadow: 0 0 3px black;
+}
+
+.user-menu {
+    flex-flow: row wrap;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    font-size: 25px;
+}
+
+.user-menu li {
+        color: white;
+        list-style: none;
+        display: block;
+        margin-right: 40px;
+}
+
+.user-menu li:last-child {
+            margin-right: 0;
+}
+
+.user-menu a {
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        padding:5px;
+}
+
+@media only screen and (max-width: 650px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        margin-bottom: 25px;
+    }
+}
+
+.content {
+    min-width: 100%;
+    min-height:76vh;
+}
+
+.footer {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: center;
+    font-size: larger;
+}
