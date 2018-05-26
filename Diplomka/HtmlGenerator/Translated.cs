@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -10,6 +11,7 @@ namespace Diplomka.HtmlGenerator
     {
         public static MvcHtmlString Translated(this HtmlHelper helper, string eng, List<string> ukr)
         {
+            StringBuilder sb = new StringBuilder();
             #region Translated
             TagBuilder Translated = new TagBuilder("div");//Whole translted form
             #region english-translted
@@ -23,11 +25,18 @@ namespace Diplomka.HtmlGenerator
             #endregion
             #region ukraine-translate
             TagBuilder ukraine_translate = new TagBuilder("div");//ukraine form
+            TagBuilder container = new TagBuilder("div");
             TagBuilder ua_words = new TagBuilder("p");
             TagBuilder ua_img = new TagBuilder("img");
             #endregion
             #endregion
+            TagBuilder enter = new TagBuilder("br/");// пробіл
 
+            if (eng.Length > 1)
+            {
+                eng = eng.Substring(0, 1).ToUpper() + eng.Remove(0, 1);
+            }
+            
             //english form
             english_translate.AddCssClass("english-translate");
             uk_word.SetInnerText(eng);
@@ -44,13 +53,24 @@ namespace Diplomka.HtmlGenerator
 
             //ukraine form
             ukraine_translate.AddCssClass("ukraine-translate");
-            foreach (var word in ukr)
+            if (ukr.Count == 1)
             {
-                TagBuilder enter = new TagBuilder("br");
-                ua_words.SetInnerText(word);
-                ua_words.InnerHtml += enter.ToString();
+                ua_words.SetInnerText(ukr.First());
             }
-            ukraine_translate.InnerHtml += ua_words.ToString();
+            else//no-fix please add div and try again
+            {
+                foreach (var word in ukr)
+                {
+                    //ua_words.SetInnerText(word);
+                    //enter.InnerHtml += ua_words.ToString();
+                    //ukraine_translate.InnerHtml += enter.ToString();
+                    sb.Append("<center>");
+                    sb.Append(word);
+                    sb.Append("<br/>");
+                    sb.Append("<center/>");
+                }
+            }
+            ukraine_translate.InnerHtml += sb.ToString();
             ua_img.MergeAttribute("src", "/Content/Image/Pages/UA.png");
             ua_img.MergeAttribute("width", "100%");
             ua_img.MergeAttribute("height", "100%");
@@ -62,9 +82,15 @@ namespace Diplomka.HtmlGenerator
             Translated.InnerHtml += font_icon;
             Translated.InnerHtml += ukraine_translate;
 
-            
 
-            return new MvcHtmlString(Translated.ToString());
+            if (ukr.Count != 0)
+            {
+                return new MvcHtmlString(Translated.ToString());
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

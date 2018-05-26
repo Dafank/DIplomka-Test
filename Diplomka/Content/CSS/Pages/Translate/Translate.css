@@ -38,20 +38,29 @@ input{
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
+  width: 85%;
   height: 20vh;
   position: relative;
 }
 
-.english-translate{
-  min-width:40%;
-  position: relative;
-  z-index: 10;
+.english-translate {
+    min-width: 40%;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
 }
 
-.ukraine-translate{
-  min-width:40%;
-  position: relative;
+.ukraine-translate {
+    min-width: 40%;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
 }
 
 img{
@@ -61,7 +70,7 @@ img{
   right: 0;
   top: 0;
   bottom: 0;
-  opacity: 0.6;
+  opacity: 0.2;
 }
 
 p{
@@ -74,5 +83,5 @@ i{
   background:linear-gradient(to right,#f7ff00, #db36a4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 50px;
+  font-size: 70px;
 }

@@ -9,8 +9,8 @@ namespace Diplomka.DataModel
     public class ua_translate
     {
         [Key]
-        public int UkrainId { get; set; }
-        public string Word { get; set; }
+        public int UkrainId { get; set; }// id елемента для подальшого зв'язування
+        public string Word { get; set; }// українське слово
         public uk_translate English { get; set; }
     }
 }

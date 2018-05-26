@@ -21,11 +21,11 @@ namespace Diplomka.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Translate(string Word)
+        public ActionResult Translate(string Word)// передається англійське слово
         {
-            List<string> ua_words = Translaters.SetData(Word);
-            ViewBag.word = Word;
-            return View(ua_words);
+            List<string> ua_words = Translaters.SetData(Word);//повертає українське слово
+            ViewBag.word = Word;// повертає українське слово
+            return View(ua_words);// повертає наше слово на українській
         }
 
         public ActionResult Grammar()
