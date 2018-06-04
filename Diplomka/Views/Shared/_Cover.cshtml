@@ -10,18 +10,33 @@
 </head>
 <body>
     <div class="wrapper">
-            <div class="header">
-                <ul class="menu">
-                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "hov" })</li>
-                    <li>@Html.ActionLink("Translate", "Translate", "Home", null, new { @class = "hov" })</li>
-                    <li>@Html.ActionLink("Grammar", "Grammar", "Home", null, new { @class = "hov" })</li>
-                </ul>
+        <div class="header">
+            <ul class="menu">
+                <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "hov" })</li>
+                <li>@Html.ActionLink("Translate", "Translate", "Home", null, new { @class = "hov" })</li>
+                <li>@Html.ActionLink("Grammar", "Grammar", "Home", null, new { @class = "hov" })</li>
+            </ul>
 
+            @if (Request.IsAuthenticated)
+            {
+                <text>
+                    Hello, @Html.ActionLink(User.Identity.Name, "Translate", "Home", routeValues: null, htmlAttributes: new { @class = "username", title = "go" })!
+                    @using (Html.BeginForm("LogOff", "User", FormMethod.Post, new { id = "logoutForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                    }
+                </text>
+            }
+            else
+            {
                 <ul class="user-menu">
                     <li>@Html.ActionLink("Login", "Login", "User", null, new { @class = "hov" })</li>
                     <li>@Html.ActionLink("Sign up", "Registration", "User", null, new { @class = "hov" })</li>
                 </ul>
-            </div>
+            }
+
+        </div>
             <div class="content">
                 @RenderBody()
             </div>

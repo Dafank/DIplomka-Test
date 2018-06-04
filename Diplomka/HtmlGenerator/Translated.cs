@@ -53,23 +53,14 @@ namespace Diplomka.HtmlGenerator
 
             //ukraine form
             ukraine_translate.AddCssClass("ukraine-translate");
-            if (ukr.Count == 1)
-            {
-                ua_words.SetInnerText(ukr.First());
-            }
-            else//no-fix please add div and try again
-            {
+
                 foreach (var word in ukr)
                 {
-                    //ua_words.SetInnerText(word);
-                    //enter.InnerHtml += ua_words.ToString();
-                    //ukraine_translate.InnerHtml += enter.ToString();
                     sb.Append("<center>");
                     sb.Append(word);
                     sb.Append("<br/>");
                     sb.Append("<center/>");
                 }
-            }
             ukraine_translate.InnerHtml += sb.ToString();
             ua_img.MergeAttribute("src", "/Content/Image/Pages/UA.png");
             ua_img.MergeAttribute("width", "100%");

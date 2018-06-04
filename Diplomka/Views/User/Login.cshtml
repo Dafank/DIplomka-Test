@@ -1,4 +1,4 @@
-﻿@model Diplomka.Models.User.Login.LoginData
+﻿@model Diplomka.Models.User.LoginModel
 @{
     Layout = null;
 }
@@ -24,27 +24,27 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div>
                         <div class="form-container">
-                            @using (Html.BeginForm())
-                            {
-                                <h1>Login</h1>
-                                <div class="form-group">
-                                    <b>@Html.LabelFor(x => x.Email):</b>
-                                    <div class="IconInput">
-                                        @Html.EditorFor(x => x.Email, new { htmlAttributes = new { placeholder = "Email", @required = "true" } })
-                                        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
-                                    </div>
-                                    @Html.ValidationMessageFor(x => x.Email)
+                            @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+                            {@Html.AntiForgeryToken()
+                            <h1>Login</h1>
+                            <div class="form-group">
+                                <b>@Html.LabelFor(x => x.Email):</b>
+                                <div class="IconInput">
+                                    @Html.EditorFor(x => x.Email, new { htmlAttributes = new { placeholder = "Email", @required = "true" } })
+                                    <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
                                 </div>
-                                <div class="form-group">
-                                    <b>@Html.LabelFor(x => x.Password):</b>
-                                    <div class="IconInput">
-                                        @Html.EditorFor(x => x.Password, new { htmlAttributes = new { placeholder = "Password", @required = "true" } })
-                                        <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
-                                    </div>
-                                    @Html.ValidationMessageFor(x => x.Password)
+                                @Html.ValidationMessageFor(x => x.Email)
+                            </div>
+                            <div class="form-group">
+                                <b>@Html.LabelFor(x => x.Password):</b>
+                                <div class="IconInput">
+                                    @Html.EditorFor(x => x.Password, new { htmlAttributes = new { placeholder = "Password", @required = "true" } })
+                                    <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true"></i>
                                 </div>
-                                <button type="submit" class="btn btn-success btn-block">Sign in</button>
-                            }
+                                @Html.ValidationMessageFor(x => x.Password)
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Sign in</button>
+                        }
                         </div>
                     </div>
                 </div>

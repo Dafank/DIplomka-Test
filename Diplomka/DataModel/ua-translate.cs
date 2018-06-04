@@ -11,6 +11,6 @@ namespace Diplomka.DataModel
         [Key]
         public int UkrainId { get; set; }// id елемента для подальшого зв'язування
         public string Word { get; set; }// українське слово
-        public uk_translate English { get; set; }
+        public uk_translate English { get; set; }//Одне українське слово тільки до 1 англійського
     }
 }

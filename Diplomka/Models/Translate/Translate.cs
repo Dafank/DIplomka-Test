@@ -11,11 +11,12 @@ namespace Diplomka.Models
         
         public static List<string> SetData(string s)
         {
-            List<string> ua_words = new List<string>();
+            List<string> ua_words = new List<string>();//Список українських слів
             Database.SetInitializer(new CreateDatabaseIfNotExists<Translater>());
-            using (Translater db = new Translater())
+            /*Перевірка чи БД існує, якщо ні то база створюється*/
+            using (Translater db = new Translater())//Підключення до БД
             {
-                db.Configuration.LazyLoadingEnabled = false;
+                db.Configuration.LazyLoadingEnabled = true;
 
                 db.Ukrain.Load();
                 var qwe = from p in db.Ukrain
