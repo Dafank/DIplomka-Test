@@ -145,7 +145,6 @@ D:\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.csp
 D:\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.csproj.CopyComplete
 D:\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.dll
 D:\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.pdb
-C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.csprojAssemblyReference.cache
 C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.csproj.CoreCompileInputs.cache
 C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.dll
 C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.pdb
@@ -256,3 +255,4 @@ C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplom
 C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\bin\Org.Mentalis.Security.Cryptography.xml
 C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\bin\Mono.Math.xml
 C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.csproj.App.config
+C:\Users\Andrey\Desktop\Диплом\VIT — База даних тест\Diplomka\Diplomka\obj\Debug\Diplomka.csprojAssemblyReference.cache

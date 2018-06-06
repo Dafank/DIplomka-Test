@@ -33,7 +33,7 @@ namespace Diplomka.Controllers
                 return RedirectToLocal(returnUrl);
             }
 
-            ModelState.AddModelError("", "Ви ВВели невірний пароль або пошту.");
+            ModelState.AddModelError("", "Ви Ввели невірний пароль або пошту.");
             return View(model);
         }
 

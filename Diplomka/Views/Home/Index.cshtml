@@ -4,5 +4,63 @@
     Layout = "~/Views/Shared/_Cover.cshtml";
 }
 
-<center>Coming soon</center> 
+<div id="slide" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+        <li data-target="#slide" data-slide-to="0" class="active"></li>
+        <li data-target="#slide" data-slide-to="1"></li>
+        <li data-target="#slide" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="~/Content/Image/Slides/слайд 1-min.jpg" alt="Los Angeles" class="img-fluid">
+            <div class="carousel-caption">
+                <h3>Los Angeles</h3>
+                <p>We had such a great time in LA!</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/Image/Slides/слайд 2-min.jpg" alt="Chicago" class="img-fluid">
+            <div class="carousel-caption">
+                <h3>Chicago</h3>
+                <p>Thank you, Chicago!</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="~/Content/Image/Slides/слайд 3-min.jpg" alt="New York" class="img-fluid">
+            <div class="carousel-caption">
+                <h3>New York</h3>
+                <p>We love the Big Apple!</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#slide" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#slide" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+</div>
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col-4">
+            <i class="fab fa-android" style="font-size:26px"></i>
+            <h5>Переклад</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, explicabo.</p>
+        </div>
+        <div class="col-4">
+            <i class="fab fa-android " style="font-size:26px"></i>
+            <h5>Переклад</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, explicabo.</p>
+        </div>
+        <div class="col-4">
+            <i class="fab fa-android " style="font-size:26px"></i>
+            <h5>Переклад</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, explicabo.</p>
+        </div>
+
+    </div>
+</div>
+
+
 
