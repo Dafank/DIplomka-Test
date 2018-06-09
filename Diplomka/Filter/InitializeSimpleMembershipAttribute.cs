@@ -62,13 +62,12 @@ namespace Diplomka.Filter
                         // Поиск пользователя с логином admin
                         if (membership.GetUser("admin", false) == null)
                         {
-                            membership.CreateUserAndAccount("admin", "qwe123"); // создание пользователя
+                            membership.CreateUserAndAccount("admin", "fentik9814@gmail.com"); // создание пользователя
                             roles.AddUsersToRoles(new[] { "admin" }, new[] { "Admin" }); // установка роли для пользователя
                         }
                         if (membership.GetUser("user1", false) == null)
                         {
-                            membership.CreateUserAndAccount("user1", "qwe123");
-                            roles.AddUsersToRoles(new[] { "user1" }, new[] { "Moderator" });
+                            
                         }
                     }
                     catch (Exception ex)

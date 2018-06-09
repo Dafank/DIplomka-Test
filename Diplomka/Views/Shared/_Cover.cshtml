@@ -12,62 +12,66 @@
 
 </head>
 <body>
+    <div id="header">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+            <span class="navbar-brand">No-GoogleTranslater</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
-        <span class="navbar-brand">No-GoogleTranslater</span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto navbar-left">
+                    <li class="nav-item">
+                        @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Translate", "Translate", "Home", null, new { @class = "nav-link" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Grammar", "Grammar", "Home", null, new { @class = "nav-link" })
+                    </li>
+                </ul>
 
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto navbar-left">
-                <li class="nav-item">
-                    @Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Translate", "Translate", "Home", null, new { @class = "nav-link" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Grammar", "Grammar", "Home", null, new { @class = "nav-link" })
-                </li>
-            </ul>
+                <ul class="nav navbar-nav navbar-right ">
 
-
-            <ul class="nav navbar-nav navbar-right ">
-
-                @if (Request.IsAuthenticated)
-                {
-                        <li class="nav-item"> @Html.ActionLink("Hello, "+User.Identity.Name+"!", "Translate", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="nav-item"> @Html.ActionLink("Hello, " + User.Identity.Name + "!", "Translate", "Home", routeValues: null, htmlAttributes: new { @class = "nav-link" })</li>
                         <li class="nav-item">
-                                <text>
-                                    @using (Html.BeginForm("LogOff", "User", FormMethod.Post, new { id = "logoutForm" }))
-                                    {
+                            <text>
+                                @using (Html.BeginForm("LogOff", "User", FormMethod.Post, new { id = "logoutForm" }))
+                                {
 
-                                        @Html.AntiForgeryToken()
-                                        <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log Off</a>
-                                    }
-                                </text>
+                                    @Html.AntiForgeryToken()
+                                    <a href="javascript:document.getElementById('logoutForm').submit()" class="nav-link">Log Off</a>
+                                }
+                            </text>
                         </li>
-                }
-                else
-                {
+                    }
+                    else
+                    {
 
                         <li class="nav-item">@Html.ActionLink("Login", "Login", "User", null, new { @class = "nav-link" })</li>
                         <li class="nav-item">@Html.ActionLink("Sign up", "Registration", "User", null, new { @class = "nav-link" })</li>
-                }
-            </ul>
-        </div>
-    </nav>
+                    }
+                </ul>
+            </div>
+        </nav>
 
-
-                @RenderBody()
-
-
-    <div class="navbar navbar-dark bg-dark justify-content-center align-items-center">
-        <p id="right">
-            &copy; Всі права захищені (Но це неточно)
-        </p>
     </div>
+
+
+    <div id="wrapper">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <div class="navbar navbar-dark bg-dark justify-content-center align-items-center">
+            <p>
+                &copy; Всі права захищені (Но це неточно)
+            </p>
+        </div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
