@@ -61,7 +61,6 @@ namespace Diplomka.Controllers
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.Email, model.Password);
-
                     WebSecurity.Login(model.Email, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

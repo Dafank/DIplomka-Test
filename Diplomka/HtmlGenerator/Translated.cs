@@ -36,7 +36,7 @@ namespace Diplomka.HtmlGenerator
             {
                 eng = eng.Substring(0, 1).ToUpper() + eng.Remove(0, 1);
             }
-            
+
             //english form
             english_translate.AddCssClass("english-translate");
             uk_word.SetInnerText(eng);
@@ -54,13 +54,13 @@ namespace Diplomka.HtmlGenerator
             //ukraine form
             ukraine_translate.AddCssClass("ukraine-translate");
 
-                foreach (var word in ukr)
-                {
-                    sb.Append("<center>");
-                    sb.Append(word);
-                    sb.Append("<br/>");
-                    sb.Append("<center/>");
-                }
+            foreach (var word in ukr)
+            {
+                sb.Append("<center>");
+                sb.Append(word);
+                sb.Append("<br/>");
+                sb.Append("<center/>");
+            }
             ukraine_translate.InnerHtml += sb.ToString();
             ua_img.MergeAttribute("src", "/Content/Image/Pages/UA.png");
             ua_img.MergeAttribute("width", "100%");

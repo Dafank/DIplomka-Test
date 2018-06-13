@@ -154,6 +154,9 @@
     <Content Include="Content\CSS\User\Login\Login.css" />
     <Content Include="Content\CSS\User\Registration\Registration.css" />
     <Content Include="Content\CSS\User\Validation.css" />
+    <Content Include="Content\Image\Articles\Future-Simple.jpg" />
+    <Content Include="Content\Image\Articles\Present Simple.jpg" />
+    <Content Include="Content\Image\Articles\Present Continuous.jpg" />
     <Content Include="Content\Image\Pages\UA.png" />
     <Content Include="Content\Image\Pages\UK.png" />
     <Content Include="Content\Image\Slides\слайд 1-min.jpg" />

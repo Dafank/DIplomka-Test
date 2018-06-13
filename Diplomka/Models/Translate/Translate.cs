@@ -8,7 +8,7 @@ namespace Diplomka.Models
 {
     public static class Translaters
     {
-        
+
         public static List<string> SetData(string s)
         {
             List<string> ua_words = new List<string>();//Список українських слів
@@ -35,11 +35,8 @@ namespace Diplomka.Models
                 {
                     ua_words.Add("Такого слова покіщо немає в нашій базі");
                 }
-                                
             }
             return ua_words;
         }
-
     }
-        
 }

@@ -10,7 +10,6 @@ namespace Diplomka.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
         public ActionResult Index()
         {
             return View();
@@ -20,6 +19,7 @@ namespace Diplomka.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult Translate(string Word)// передається англійське слово
         {
